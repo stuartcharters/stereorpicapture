@@ -16,19 +16,20 @@ long = 0;
 # if we do (mode 2/3) then record the location for the image
 
 while True:
-	try:
+	
 		report = session.next()
 		if report['class']== 'TPV':
+			print report
 			if hasattr(report,'mode'):
 				if report.mode !=1:
 					# record location
 					print "Has Fix"
 					lat = report.lat
-					long = report.long
+					long = report.lon
 					# Take Image and store with filename using lat and long
-					filename= "img" + lat + "-" + long + ".jpg"
+					filename= "img" + str(lat) + "-" + str(long) + ".jpg"
 					with picamera.PiCamera() as camera:
-						camera.resolurion(1024,768)
+						camera.resolution = (1024,768)
 						camera.start_preview()
 						time.sleep(2)
 						camera.capture(filename)
@@ -37,11 +38,6 @@ while True:
 				else:
 					print "No Fix"
 				
-
-	except StopInteration:
-		session = None
-		print "GPSD has terminated"
-
 
 
 # take image
