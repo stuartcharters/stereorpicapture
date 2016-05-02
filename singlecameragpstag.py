@@ -26,8 +26,9 @@ while True:
 					print "Has Fix"
 					lat = report.lat
 					long = report.lon
+					t = time.time()
 					# Take Image and store with filename using lat and long
-					filename= "img" + str(lat) + "-" + str(long) + ".jpg"
+					filename= "img" + str(lat) + "-" + str(long) + "-" + str(t) + ".jpg"
 					with picamera.PiCamera() as camera:
 						camera.resolution = (1024,768)
 						camera.start_preview()
