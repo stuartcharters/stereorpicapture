@@ -13,6 +13,6 @@ while True:
 		camera.start_preview()
 		GPIO.output(7, GPIO.LOW)
 		time.sleep(2)
-		camera.capture(t+'.jpg')
+		camera.capture(str(t)+'.jpg')
 
 GPIO.cleanup()

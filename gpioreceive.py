@@ -18,6 +18,6 @@ while True:
 		#print "after wait"
 		#print GPIO.input(3)
 		time.sleep(2)
-		camera.capture(t + '.jpg')
+		camera.capture(str(t) + '.jpg')
 
 GPIO.cleanup()
