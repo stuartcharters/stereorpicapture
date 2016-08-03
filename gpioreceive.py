@@ -1,13 +1,14 @@
 import time
 import picamera
 import RPi.GPIO as GPIO
-
+#GPIO.cleanup()
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(7, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 while True:
 	#print "Before wait"
 	#print GPIO.input(7)
+	time.sleep(0.1)
 	GPIO.wait_for_edge(7,GPIO.RISING)
 	t = time.time()
 	#print "after wait"
