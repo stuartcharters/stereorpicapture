@@ -4,7 +4,7 @@ import picamera
 import RPi.GPIO as GPIO
 savelocation= ""
 # function to take picture
-def takepic():
+def takepic(channel=0):
     t = time.time()
     with picamera.PiCamera() as camera:
         camera.resolution = (2592,1944)
