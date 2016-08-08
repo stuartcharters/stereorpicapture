@@ -28,7 +28,7 @@ def main(argv):
     else:
         GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
         GPIO.add_event_detect(pin, GPIO.RISING)
-        GPIO.add_event_callback(pin,takepic,100)
+        GPIO.add_event_callback(pin,takepic, bouncetime=100)
         while True:
             GPIO.wait_for_edge(pin)
     GPIO.cleanup()
