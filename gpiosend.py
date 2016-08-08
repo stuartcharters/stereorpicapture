@@ -10,7 +10,7 @@ while True:
 	with picamera.PiCamera() as camera:
 		camera.resolution = (2592,1944)
 		camera.start_preview()
-		GPIO.OUTPUT(3, GPIO.LOW)
+		GPIO.output(3, GPIO.LOW)
 		time.sleep(2)
 		camera.capture('test.jpg')
 
