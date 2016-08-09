@@ -6,17 +6,18 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(7, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 while True:
-	print "Before wait"
-	print GPIO.input(7)
+	#print "Before wait"
+	#print GPIO.input(7)
 	GPIO.wait_for_edge(7,GPIO.RISING)
-	print "after wait"
-	print GPIO.input(7)
+	t = time.time()
+	#print "after wait"
+	#print GPIO.input(7)
 	with picamera.PiCamera() as camera:
 		camera.resolution = (2592,1944)
 		#camera.start_preview()
 		#print "after wait"
 		#print GPIO.input(3)
-		time.sleep(1)
-		#camera.capture('test.jpg')
+		time.sleep(2)
+		camera.capture(t + '.jpg')
 
 GPIO.cleanup()
