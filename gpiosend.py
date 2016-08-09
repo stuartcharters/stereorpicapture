@@ -3,14 +3,14 @@ import picamera
 import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(3, GPIO.OUT, initial= GPIO.LOW)
+GPIO.setup(7, GPIO.OUT, initial= GPIO.LOW)
 
 while True:
-	GPIO.output(3, GPIO.HIGH)
+	GPIO.output(7, GPIO.HIGH)
 	with picamera.PiCamera() as camera:
 		camera.resolution = (2592,1944)
 		camera.start_preview()
-		GPIO.output(3, GPIO.LOW)
+		GPIO.output(7, GPIO.LOW)
 		time.sleep(2)
 		camera.capture('test.jpg')
 

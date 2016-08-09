@@ -3,14 +3,14 @@ import picamera
 import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(3, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(7, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 while True:
 	print "Before wait"
-	print GPIO.input(3)
-	GPIO.wait_for_edge(3,GPIO.RISING)
+	print GPIO.input(7)
+	GPIO.wait_for_edge(7,GPIO.RISING)
 	print "after wait"
-	print GPIO.input(3)
+	print GPIO.input(7)
 	with picamera.PiCamera() as camera:
 		camera.resolution = (2592,1944)
 		#camera.start_preview()
