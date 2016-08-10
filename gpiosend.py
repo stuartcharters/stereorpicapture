@@ -1,17 +1,17 @@
 import time
 import picamera
 import RPi.GPIO as GPIO
-
+pin = 7
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(7, GPIO.OUT, initial= GPIO.LOW)
+GPIO.setup(pin, GPIO.OUT, initial= GPIO.LOW)
 
 while True:
-	GPIO.output(7, GPIO.HIGH)
+	GPIO.output(pin, GPIO.HIGH)
 	t = time.time()
 	with picamera.PiCamera() as camera:
 		camera.resolution = (2592,1944)
 		camera.start_preview()
-		GPIO.output(7, GPIO.LOW)
+		GPIO.output(pin, GPIO.LOW)
 		time.sleep(2)
 		camera.capture(str(t)+'.jpg')
 
