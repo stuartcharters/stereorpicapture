@@ -1,7 +1,7 @@
 import time
 import picamera
 import RPi.GPIO as GPIO
-pin = 7
+pin = 11
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(pin, GPIO.OUT, initial= GPIO.LOW)
 
