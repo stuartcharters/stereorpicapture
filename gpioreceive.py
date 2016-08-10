@@ -2,13 +2,14 @@ import time
 import picamera
 import RPi.GPIO as GPIO
 #GPIO.cleanup()
+pin = 7
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(7, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 time.sleep(1)
-GPIO.add_event_detect(7, GPIO.BOTH)
+GPIO.add_event_detect(pin, GPIO.BOTH)
 while True:
-	if GPIO.event_detected(7):
-		signalRising = GPIO.input(7)
+	if GPIO.event_detected(pin):
+		signalRising = GPIO.input(pin)
 		if signalRising:
 			t = time.time()
 			with picamera.PiCamera() as camera:
