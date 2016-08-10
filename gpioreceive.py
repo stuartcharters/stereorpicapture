@@ -18,6 +18,6 @@ while True:
 				time.sleep(2)
 				camera.capture(str(t) + '.jpg')
 	else:
-			sleep(0.01)
+			time.sleep(0.01)
 
 GPIO.cleanup()
