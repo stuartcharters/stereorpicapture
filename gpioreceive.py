@@ -4,6 +4,7 @@ import RPi.GPIO as GPIO
 #GPIO.cleanup()
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(7, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+time.sleep(1)
 GPIO.add_event_detect(7, GPIO.BOTH)
 while True:
 	if GPIO.event_detected(7):
