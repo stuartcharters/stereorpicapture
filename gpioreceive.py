@@ -2,7 +2,7 @@ import time
 import picamera
 import RPi.GPIO as GPIO
 #GPIO.cleanup()
-pin = 7
+pin = 11
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 time.sleep(1)
