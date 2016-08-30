@@ -13,7 +13,7 @@ def takepic():
 
 # main function of program
 def main():
-    pin = 7
+    pin = 11
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     GPIO.add_event_detect(pin, GPIO.RISING)
