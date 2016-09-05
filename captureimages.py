@@ -14,8 +14,9 @@ def takepic():
 
 # main function of program
 def main(argv):
-    role = argv[1]
-    pin = argv[4]
+    role = argv[0]
+    pin = argv[3]
+    print pin
     GPIO.setmode(GPIO.BOARD)
     if role == "master":
         GPIO.setup(pin, GPIO.OUT, pull_up_down=GPIO.PUD_DOWN)
