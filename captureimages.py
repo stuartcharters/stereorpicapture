@@ -34,5 +34,5 @@ def main(argv):
 
 
 if __name__=="__main__":
-    savelocation = "/mnt/" + str(argv[3])  + "-" + str(argv[2]) + "-"
+    savelocation = "/mnt/" + str(sys.argv[3])  + "-" + str(sys.argv[2]) + "-"
     main(sys.argv[1:])
