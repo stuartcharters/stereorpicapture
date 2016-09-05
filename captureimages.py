@@ -17,7 +17,7 @@ def main(argv):
     role = argv[1]
     pin = argv[4]
     GPIO.setmode(GPIO.BOARD)
-    if role = "master":
+    if role == "master":
         GPIO.setup(pin, GPIO.OUT, pull_up_down=GPIO.PUD_DOWN)
         while True:
             GPIO.output(pin, GPIO.HIGH)
