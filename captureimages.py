@@ -18,7 +18,8 @@ def main(argv):
     pin = int(argv[3])
     GPIO.setmode(GPIO.BOARD)
     if role == "master":
-        GPIO.setup(pin, GPIO.OUT, pull_up_down=GPIO.PUD_DOWN)
+        GPIO.setup(pin, GPIO.OUT)
+        GPIO.output(pin, GPIO.LOW)
         while True:
             GPIO.output(pin, GPIO.HIGH)
             takepic()
