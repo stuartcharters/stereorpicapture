@@ -3,17 +3,20 @@ import time
 import picamera
 import RPi.GPIO as GPIO
 savelocation= ""
-count = 0
+piccount = 0
+
 # function to take picture
 def takepic(channel=0):
     #t = time.time()
-    t = count
-    count +=1
+    #t = count
+    global piccount
+    count = piccount
+    piccount = piccount + 1
     with picamera.PiCamera() as camera:
         camera.resolution = (2592,1944)
         camera.start_preview()
         time.sleep(2)
-        camera.capture(savelocation + str(t) + '.jpg')
+        camera.capture(savelocation + str(count) + '.jpg')
 
 # main function of program
 def main(argv):
@@ -39,4 +42,5 @@ def main(argv):
 
 if __name__=="__main__":
     savelocation = "/mnt/" + str(sys.argv[3])  + "-" + str(sys.argv[2]) + "-"
+    piccount = 0
     main(sys.argv[1:])
