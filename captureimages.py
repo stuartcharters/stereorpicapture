@@ -3,9 +3,12 @@ import time
 import picamera
 import RPi.GPIO as GPIO
 savelocation= ""
+count = 0
 # function to take picture
 def takepic(channel=0):
-    t = time.time()
+    #t = time.time()
+    t = count
+    count +=1
     with picamera.PiCamera() as camera:
         camera.resolution = (2592,1944)
         camera.start_preview()
