@@ -10,6 +10,7 @@ def takepic(channel=0):
     #t = time.time()
     #t = count
     global piccount
+    global savelocation
     count = piccount
     piccount = piccount + 1
     with picamera.PiCamera() as camera:
@@ -30,7 +31,7 @@ def main(argv):
             GPIO.output(pin, GPIO.HIGH)
             takepic()
             GPIO.output(pin, GPIO.LOW)
-            time.sleep(1)
+            time.sleep(2)
 
     else:
         GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
