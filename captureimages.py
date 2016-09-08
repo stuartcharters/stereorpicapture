@@ -27,6 +27,7 @@ def main(argv):
             GPIO.output(pin, GPIO.HIGH)
             takepic()
             GPIO.output(pin, GPIO.LOW)
+            time.sleep(1)
 
     else:
         GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
