@@ -17,7 +17,7 @@ def takepic(channel=0):
         camera.resolution = (2592,1944)
         camera.start_preview()
         time.sleep(2)
-        camera.capture(savelocation + str(count) + '.jpg')
+        camera.capture(savelocation + (time.strftime("%Y%m%d_%H%M%S")) + str(count) + '.jpg')
 
 # main function of program
 def main(argv):
