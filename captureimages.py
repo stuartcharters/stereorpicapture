@@ -4,6 +4,8 @@ import picamera
 import RPi.GPIO as GPIO
 savelocation= ""
 piccount = 0
+sleepaftertaking = 2
+photostotake = 44;
 
 # function to take picture
 def takepic(channel=0):
@@ -27,11 +29,12 @@ def main(argv):
     if role == "master":
         GPIO.setup(pin, GPIO.OUT)
         GPIO.output(pin, GPIO.LOW)
-        while True:
+        while (photostotake < piccount):
             GPIO.output(pin, GPIO.HIGH)
             takepic()
             GPIO.output(pin, GPIO.LOW)
-            time.sleep(2)
+            time.sleep(sleepaftertaking)
+
 
     else:
         GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
