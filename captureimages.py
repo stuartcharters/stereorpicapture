@@ -32,7 +32,7 @@ def main(argv):
     if role == "master":
         GPIO.setup(pin, GPIO.OUT)
         GPIO.output(pin, GPIO.LOW)
-        while (photostotake < piccount):
+        while (piccount < photostotake):
             GPIO.output(pin, GPIO.HIGH)
             takepic()
             GPIO.output(pin, GPIO.LOW)
