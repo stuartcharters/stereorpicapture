@@ -23,7 +23,8 @@ def takepic(channel=0):
         camera.start_preview()
         time.sleep(2)
         camera.capture(savelocation + str(time.strftime("%Y%m%d_%H%M%S")) + str(count) + '.jpg')
-
+        time.sleep(sleepaftertaking)
+        
 # main function of program
 def main(argv):
     role = argv[0]
@@ -36,7 +37,7 @@ def main(argv):
             GPIO.output(pin, GPIO.HIGH)
             takepic()
             GPIO.output(pin, GPIO.LOW)
-            time.sleep(sleepaftertaking)
+            time.sleep(3)
 
 
     else:
