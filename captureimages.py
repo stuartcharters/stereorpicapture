@@ -37,7 +37,7 @@ def main(argv):
             GPIO.output(pin, GPIO.HIGH)
             takepic()
             GPIO.output(pin, GPIO.LOW)
-            time.sleep(3)
+            time.sleep(4)
 
 
     else:
