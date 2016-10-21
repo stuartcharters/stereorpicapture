@@ -8,7 +8,7 @@ piccount = 0
 #variable for the time to sleep after taking a photo in seconds
 sleepaftertaking = 2
 #variable to set the number of photos to take - count from zero
-photostotake = 44;
+photostotake = 64;
 
 # function to take picture
 def takepic(channel=0):
