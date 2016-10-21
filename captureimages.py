@@ -21,7 +21,7 @@ def takepic(channel=0):
     with picamera.PiCamera() as camera:
         camera.resolution = (2592,1944)
         camera.start_preview()
-        time.sleep(2)
+        time.sleep(1)
         camera.capture(savelocation + str(time.strftime("%Y%m%d_%H%M%S")) + str(count) + '.jpg')
         time.sleep(sleepaftertaking)
         
@@ -37,7 +37,7 @@ def main(argv):
             GPIO.output(pin, GPIO.HIGH)
             takepic()
             GPIO.output(pin, GPIO.LOW)
-            time.sleep(4)
+            time.sleep(5)
 
 
     else:
