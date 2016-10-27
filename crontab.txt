@@ -1,4 +1,5 @@
 # Code to be entered into user (pi) crontab (crontab -e)
-# Use && so that if there are errors running the scripts (e.g. no usb inserted), system does not immediately shutdown
+# Use && for master so that if there are errors running the scripts (e.g. no usb inserted), system does not immediately shutdown
 # added another sleep to allow for any delay in unmounting USBs
-@reboot bash ~/stereorpicapture/runcamera.sh && bash ~/stereorpicapture/unmountstick.sh && sleep 5 && sudo shutdown now
+# added sleep at beginning to give system time to boot before mounting etc. 40 seconds for master, 30 for slave
+@reboot sleep 30; bash ~/stereorpicapture/runcamera.sh && bash ~/stereorpicapture/unmountstick.sh && sleep 5 && sudo shutdown now
