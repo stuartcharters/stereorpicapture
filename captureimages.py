@@ -44,7 +44,7 @@ def main(argv):
         GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
         GPIO.add_event_detect(pin, GPIO.RISING)
         GPIO.add_event_callback(pin,takepic)
-        while (piccount < photostotake):
+        while (piccount < (photostotake-1)):
             time.sleep(0.01)
     GPIO.cleanup()
 
