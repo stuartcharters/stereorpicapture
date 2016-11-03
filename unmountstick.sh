@@ -1,1 +1,1 @@
-sudo umount /dev/sda
+sudo umount /dev/sda1
