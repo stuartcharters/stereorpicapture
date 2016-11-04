@@ -8,7 +8,7 @@ piccount = 0
 #variable for the time to sleep after taking a photo in seconds
 sleepaftertaking = 2
 #variable to set the number of photos to take - count from zero
-photostotake = 64;
+photostotake = 65;
 
 # function to take picture
 def takepic(channel=0):
@@ -33,7 +33,7 @@ def main(argv):
     if role == "master":
         GPIO.setup(pin, GPIO.OUT)
         GPIO.output(pin, GPIO.LOW)
-        while (piccount < photostotake):
+        while (piccount <= photostotake):
             GPIO.output(pin, GPIO.HIGH)
             takepic()
             GPIO.output(pin, GPIO.LOW)
@@ -44,7 +44,7 @@ def main(argv):
         GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
         GPIO.add_event_detect(pin, GPIO.RISING)
         GPIO.add_event_callback(pin,takepic)
-        while (piccount < (photostotake-1)):
+        while (piccount <= (photostotake-1)):
             time.sleep(0.01)
     GPIO.cleanup()
 
